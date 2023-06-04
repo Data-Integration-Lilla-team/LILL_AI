@@ -1,7 +1,58 @@
+'''
+Crawler logic
+Partendo da un direttorio seed, il crawler accede ricorsivamente nelle cartelle individuando nuovi file (file che non hanno subito il processo di tockenizzazione).
+Definiamo nuovi file, file per il quale:
+1. non sono stati indicizzati
+2. hanno subito una modifica dopo l'indicizzazione
+
+Il lavoro del crawler può esser sintetizzato nel seguente modo:
+1. partendo da rootfolder crea un file json in cui, per ogni sottocartella memorizza i file associati (topologia.json)
+    ogni file ha due variabili associate: lastUpdate, boolean (True se è nuovo, False altrimenti)
+
+2. Il crawler utilizza il file topologia.json per individuare nuove pagine (aventi il  booleano a True) e li inserisce in una Fringe 
+
+3. La fringe suddivide i file in base all'estensione (in quanto subiranno un processo diverso di estrazione dati). Per ogni tipologia di estensione, assocaimo la lista di file
+che devono essere elaborati (es. {pdf: [pathFile1,pathFile2...]})
+
+4. Il crawler passa la fringe creata al modulo Data Extraction
+
+NOTA
+Al primo run, il crawler analizza tutti i file
+Nei run successivi (periodici), il crawler passerà al dataExtractor solo i nuovi file
+
+
+NOTA 2
+La fase di creazione della topolgia e di ricerca dei nuovi file da indicizzare è distaccata per scelta
+'''
+
+
 import os
 import time
 import json
+import shutil
 
+
+
+
+#classe fringe di supporto
+#é un dizionario composto da 4 entry
+#1. lista di file .pdf da indicizzare
+#2. lista di file .txt da indicizzare
+#3. lista di file .pptx da indicizzare
+#4. lista di file .docx da indicizzare
+class Fringe:
+    def __init__(self):
+          self.fringe={"pdf":[],"pptx":[],"docx":[],"txt":[]}   #lista di file da indicizzare
+
+    def add_elements(self, list,root):
+         for k in list.keys():
+            if list[k][1]==True:
+                file_name=os.path.join(root,k)
+               
+                extension=k.split(".")
+                extension=extension[len(extension)-1]
+                self.fringe[extension].append(file_name)
+                
 class Crawler:
     def __init__(self) -> None:
         self.rootFolder=r"dataExtraction\data_test\rootfolder"
@@ -11,7 +62,8 @@ class Crawler:
         
 
 
-    #acquisizione della topologia corrente del direttorio root
+    #Metodo per la lettura del file topology.json in cui è memorizzata la stuttura del direttorio
+    #Se non esiste (primo run) restituisce una mappa vuota
     def get_topology(self):
         try:
             with open(self.dir_topology, "r") as file:
@@ -23,16 +75,18 @@ class Crawler:
         return data
 
 
-    #considera: presenza del file + ultimo aggiornamento
+    #Verifica dei file da indicizzare (considera sia nuovi file, sia file indicizzati che hanno subito una modifica (file obsoleti))
     def check_updateV2(self,files,root,entry):
-        new_file_name=entry[0]
-        last_update=entry[1]
+        new_file_name=entry[0]      #nome del file
+        last_update=entry[1]        #ultima modifica
         
-
+        # se il file è nuovo, allor deve essere indicizzato
         if new_file_name not in files[root]:
              files[root][new_file_name]=[last_update,True]
         
+        # se il file è gia presente, verifico la data di ultima modifica
         else:
+            
              old_last_update=files[root][new_file_name]
              if last_update > old_last_update:
                   files[root][new_file_name]=[last_update,True]
@@ -50,7 +104,7 @@ class Crawler:
              files[root][new_file_name]=[last_update,True]
         
                   
-    #individuazione file da indicizzare
+    #Metodo di creazione ed aggiornamento del file topology.json (al primo run lo crea, negli altri lo aggiorna inserendo i nuovi file)
     def gather_paths(self):
         matched_files = self.get_topology()
         
@@ -74,11 +128,47 @@ class Crawler:
                     
         return matched_files
 
+    #Memorizzazione del fiele topology.pdf
     def print_topology(self,matched_files):
        
             with open(self.dir_topology, "w") as json_file:
                 json.dump(matched_files, json_file,indent=4, sort_keys=True)
 
+
+    #Metodo di ricerca dei file da aggiornare. Per ogni sottocartella di root, accedo ai file e verifico il campo boolean
+    def check_new_files(self,data,root):
+        out=[]
+        for k in data.keys():
+            if data[k][1]==True:
+                file_name=os.path.join(root,k)
+                out.append(file_name)
+        
+        return out
+                
+    #Metodo di creazione dell'output (fringe)
+    #A partire dal file topology.json inserisce in fringe i nuovi file
+    #Fringe provede a smistarli nella pipeline giusta
+    def create_list_new_files(self):
+        fringe=Fringe()
+        with open(self.dir_topology,"r") as file:
+            data=json.load(file)
+        
+        for k in data.keys():
+            files_in_k=data[k]
+            fringe.add_elements(files_in_k,k)
+        
+        return fringe
+
+    #Metodo principale.
+    #Si susseguono: 1. Creazione, aggiornamento topology.json
+    #               2. Individuazione nuovi file
+    def crawl(self):
+         topology=self.gather_paths()
+         self.print_topology(topology)
+         new_files=self.create_list_new_files()
+         return new_files
+         
+#funzione di test       
 def update_topology(path):
     with open(path, "r") as file:
         # Load the JSON data into a dictionary
@@ -92,20 +182,67 @@ def update_topology(path):
     
     with open(path,"w") as file:
          json.dump(data, file,indent=4, sort_keys=True)
-                   
+
+
+#metodo di test che simula l'inserimento da parte dell'utente di nuovi file
+def move_new_file():
+    
+
+        # Specify the source file path
+        source_file = r"dataExtraction\data_test\new_data\040-algoritmi-link-state-packet-01.pdf"
+
+        # Specify the destination file path
+        destination_file = r"dataExtraction\data_test\rootfolder\varie\spesa\040-algoritmi-link-state-packet-01.pdf"
+
+        shutil.copy(source_file, destination_file)
+
+        src_pptx=r"dataExtraction\data_test\new_data\HW8-DataIntegration_WISSEL.pptx"
+        dest_pptx=r"dataExtraction\data_test\rootfolder\varie\spesa\id-01-source-discovery.pptx"
+
+        shutil.copy(src_pptx, dest_pptx)
+        src_docx=r"dataExtraction\data_test\new_data\HW8-Relazione_WISSEL.docx"
+        dest_docx=r"dataExtraction\data_test\rootfolder\varie\spesa\HW8-Relazione_WISSEL.docx"
+        shutil.copy(src_docx, dest_docx)
+
+        src_text=r"dataExtraction\data_test\new_data\file_prova.txt"
+        dest_path=r"dataExtraction\data_test\rootfolder\varie\spesa\file_prova.txt"
+        # Copy the file from the source to the destination
+        shutil.copy(src_text,dest_path)
+
+        print("File copied successfully.")
+
+def test_case1():
+    
+    print("FIRST CRAWL")
+    crawler=Crawler()
+    new_files=crawler.crawl()
+    for k in new_files.fringe.keys():
+         print(k)
+         print(new_files.fringe[k])
+
+    #il modulo di dataExtraction indicizza i dati
+
+    print("DATA EXTRACTION")
+    update_topology(crawler.dir_topology)
+
+
+    #viene inserito un nuovo file nel dump 
+    move_new_file()
+
+
+    print("SECOND CRAWL")
+    #il crawler è richiamato ad individuare i nuovi file
+    new_files=crawler.crawl()
+    for k in new_files.fringe.keys():
+         print(k)
+         print(new_files.fringe[k])
+    
+    
      
 if __name__=="__main__":
 
+   test_case1()
    
-
-    crawler=Crawler()
-    matched_files=crawler.gather_paths()    # Print the matched file paths
-    crawler.print_topology(matched_files)
-    
-    #Alla prima creazione tutti i file sono da indicizzare
-    #Una volta indicizzati il valore boolean associato passa a false
-    #Il meotodo sotto è una simulazione della modifica del paramentro
-    #update_topology(crawler.dir_topology)
     
     
    
