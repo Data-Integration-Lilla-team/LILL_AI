@@ -18,7 +18,7 @@ class DataExtractor:
     def extract_data_from_pdf(self,file):
 
         output=dict()
-        pdfObj=open(file,'rb')
+        pdfObj=open(file,'rb',encoding="ISO")
 
         pdfReader=PyPDF2.PdfReader(pdfObj)
 
