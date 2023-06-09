@@ -6,7 +6,7 @@ class DataExtractor:
 
     def __init__(self):
 
-        self.main_folder = os.path.join("dataExtraction", "main_folder")
+        self.main_folder = os.path.join("../")
 
         self.PDF = "pdf"
 

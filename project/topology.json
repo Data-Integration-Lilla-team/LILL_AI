@@ -1,178 +1,146 @@
 {
     "dataExtraction\\data_test\\rootfolder": {},
-    "dataExtraction\\data_test\\rootfolder\\universtia": {},
-    "dataExtraction\\data_test\\rootfolder\\universtia\\algoBigData": {
+    "dataExtraction\\data_test\\rootfolder\\universita": {},
+    "dataExtraction\\data_test\\rootfolder\\universita\\algoBigData": {
         "00-introduzione-corso-01.pdf": [
-            "Sun Jun  4 12:31:45 2023",
-            false
+            "Fri Jun  9 17:45:53 2023",
+            true
         ],
         "05-quantum-introduzione-03.pdf": [
-            "Sun Jun  4 12:31:45 2023",
-            false
+            "Fri Jun  9 17:45:53 2023",
+            true
         ],
         "10-quantum-un-qubit-04.pdf": [
-            "Sun Jun  4 12:31:45 2023",
-            false
+            "Fri Jun  9 17:45:53 2023",
+            true
         ],
         "15-quantum-un-qubit-heisenberg-02.pdf": [
-            "Sun Jun  4 12:31:46 2023",
-            false
+            "Fri Jun  9 17:45:54 2023",
+            true
         ]
     },
-    "dataExtraction\\data_test\\rootfolder\\universtia\\algoBigData\\primoEsonero": {
+    "dataExtraction\\data_test\\rootfolder\\universita\\algoBigData\\primoEsonero": {
         "020-linguaggi-e-grammatiche-24.pdf": [
-            "Sun Jun  4 12:31:46 2023",
-            false
+            "Fri Jun  9 17:45:54 2023",
+            true
         ]
     },
-    "dataExtraction\\data_test\\rootfolder\\universtia\\analisiProgettazioneSoftware": {
+    "dataExtraction\\data_test\\rootfolder\\universita\\analisiProgettazioneSoftware": {
         "hofmeister2005.pdf": [
-            "Sun Jun  4 12:31:46 2023",
-            false
+            "Fri Jun  9 17:45:55 2023",
+            true
         ]
     },
-    "dataExtraction\\data_test\\rootfolder\\universtia\\automata": {
+    "dataExtraction\\data_test\\rootfolder\\universita\\automata": {
         "020-linguaggi-e-grammatiche-24.pdf": [
-            "Fri Jun  9 10:03:06 2023",
-            false
+            "Fri Jun  9 17:45:55 2023",
+            true
         ],
         "022-espressioni-regolari-07.pdf": [
-            "Fri Jun  9 10:01:14 2023",
-            false
-        ],
-        "025-cardinalita-transfinite-06.pdf": [
-            "Fri Jun  9 10:01:18 2023",
-            false
-        ]
-    },
-    "dataExtraction\\data_test\\rootfolder\\universtia\\basiDiDati": {
-        "0.1-Intro.pdf": [
-            "Sun Jun  4 12:31:46 2023",
-            false
-        ],
-        "0.2-Modello Relazionale 1.pdf": [
-            "Sun Jun  4 12:31:46 2023",
-            false
-        ],
-        "0.2-Modello Relazionale 2.pdf": [
-            "Sun Jun  4 12:31:46 2023",
-            false
-        ],
-        "0.5-Algebra Relazionale.pdf": [
-            "Sun Jun  4 12:31:46 2023",
-            false
-        ],
-        "0.6-Algebra Relazionale.pdf": [
-            "Sun Jun  4 12:31:46 2023",
-            false
-        ],
-        "0.7-ALgebra Relazionale 2.pdf": [
-            "Sun Jun  4 12:31:46 2023",
-            false
-        ],
-        "0.8-Algebra Relazionale 2.pdf": [
-            "Sun Jun  4 12:31:46 2023",
-            false
-        ]
-    },
-    "dataExtraction\\data_test\\rootfolder\\universtia\\quantum computing": {
-        "00-introduzione-corso-01.pdf": [
-            "Fri Jun  9 10:02:08 2023",
-            false
-        ],
-        "05-quantum-introduzione-03.pdf": [
-            "Fri Jun  9 10:02:08 2023",
-            false
-        ],
-        "10-quantum-un-qubit-04.pdf": [
-            "Fri Jun  9 10:02:08 2023",
-            false
-        ],
-        "15-quantum-un-qubit-heisenberg-02.pdf": [
-            "Fri Jun  9 10:00:39 2023",
-            false
-        ]
-    },
-    "dataExtraction\\data_test\\rootfolder\\universtia\\retiDiCalcolatori": {
-        "020-instradamento-01.pdf": [
-            "Fri Jun  9 10:04:48 2023",
-            false
-        ],
-        "040-algoritmi-link-state-packet-01.pdf": [
-            "Fri Jun  9 10:05:02 2023",
-            false
-        ]
-    },
-    "dataExtraction\\data_test\\rootfolder\\universtia\\sistemi_inteliggenti": {
-        "020-linguaggi-e-grammatiche-24.pdf": [
-            "Sun Jun  4 12:31:46 2023",
-            false
-        ],
-        "022-espressioni-regolari-07.pdf": [
-            "Sun Jun  4 12:31:46 2023",
+            "Fri Jun  9 17:45:56 2023",
             true
         ],
         "025-cardinalita-transfinite-06.pdf": [
-            "Sun Jun  4 12:31:46 2023",
-            false
+            "Fri Jun  9 17:45:56 2023",
+            true
         ]
     },
-    "dataExtraction\\data_test\\rootfolder\\universtia\\visualizzazioneDati": {
+    "dataExtraction\\data_test\\rootfolder\\universita\\basiDiDati": {
+        "0.1-Intro.pdf": [
+            "Fri Jun  9 17:45:56 2023",
+            true
+        ],
+        "0.2-Modello Relazionale 1.pdf": [
+            "Fri Jun  9 17:45:56 2023",
+            true
+        ],
+        "0.2-Modello Relazionale 2.pdf": [
+            "Fri Jun  9 17:45:57 2023",
+            true
+        ],
+        "0.5-Algebra Relazionale.pdf": [
+            "Fri Jun  9 17:45:57 2023",
+            true
+        ],
+        "0.6-Algebra Relazionale.pdf": [
+            "Fri Jun  9 17:45:57 2023",
+            true
+        ],
+        "0.7-ALgebra Relazionale 2.pdf": [
+            "Fri Jun  9 17:45:58 2023",
+            true
+        ],
+        "0.8-Algebra Relazionale 2.pdf": [
+            "Fri Jun  9 17:45:58 2023",
+            true
+        ]
+    },
+    "dataExtraction\\data_test\\rootfolder\\universita\\quantum computing": {
+        "00-introduzione-corso-01.pdf": [
+            "Fri Jun  9 17:45:58 2023",
+            true
+        ],
+        "05-quantum-introduzione-03.pdf": [
+            "Fri Jun  9 17:45:58 2023",
+            true
+        ],
+        "10-quantum-un-qubit-04.pdf": [
+            "Fri Jun  9 17:45:58 2023",
+            true
+        ],
+        "15-quantum-un-qubit-heisenberg-02.pdf": [
+            "Fri Jun  9 17:45:59 2023",
+            true
+        ]
+    },
+    "dataExtraction\\data_test\\rootfolder\\universita\\retiDiCalcolatori": {
+        "020-instradamento-01.pdf": [
+            "Fri Jun  9 17:45:59 2023",
+            true
+        ],
+        "040-algoritmi-link-state-packet-01.pdf": [
+            "Fri Jun  9 17:45:59 2023",
+            true
+        ]
+    },
+    "dataExtraction\\data_test\\rootfolder\\universita\\sistemi_inteliggenti": {
+        "020-linguaggi-e-grammatiche-24.pdf": [
+            "Fri Jun  9 17:45:59 2023",
+            true
+        ],
+        "022-espressioni-regolari-07.pdf": [
+            "Fri Jun  9 17:46:00 2023",
+            true
+        ],
+        "025-cardinalita-transfinite-06.pdf": [
+            "Fri Jun  9 17:46:00 2023",
+            true
+        ]
+    },
+    "dataExtraction\\data_test\\rootfolder\\universita\\visualizzazioneDati": {
         "100-web-dev-10.pdf": [
-            "Sun Jun  4 12:31:46 2023",
-            false
+            "Fri Jun  9 17:46:01 2023",
+            true
         ],
         "110-web-graphics-05.pdf": [
-            "Sun Jun  4 12:31:46 2023",
-            false
+            "Fri Jun  9 17:46:01 2023",
+            true
         ],
         "120-hands-on-d3-js-10.pdf": [
-            "Sun Jun  4 12:31:46 2023",
-            false
+            "Fri Jun  9 17:46:01 2023",
+            true
         ],
         "130-interaction-08.pdf": [
-            "Sun Jun  4 12:31:47 2023",
-            false
+            "Fri Jun  9 17:46:02 2023",
+            true
         ]
     },
     "dataExtraction\\data_test\\rootfolder\\varie": {},
-    "dataExtraction\\data_test\\rootfolder\\varie\\case": {
-        "020-instradamento-01.pdf": [
-            "Sun Jun  4 12:31:47 2023",
-            false
-        ],
-        "040-algoritmi-link-state-packet-01.pdf": [
-            "Sun Jun  4 12:31:47 2023",
-            false
-        ]
-    },
-    "dataExtraction\\data_test\\rootfolder\\varie\\papers": {
-        "Database schema mapping using Machine learning with feature selection.pdf": [
-            "Sun Jun  4 12:31:47 2023",
-            false
-        ],
-        "Deep Learning Based Approach to Unstructured Record Linkage.pdf": [
-            "Sun Jun  4 12:31:47 2023",
-            false
-        ]
-    },
     "dataExtraction\\data_test\\rootfolder\\varie\\ricette": {},
     "dataExtraction\\data_test\\rootfolder\\varie\\spesa": {
-        "040-algoritmi-link-state-packet-01.pdf": [
-            "Sun Jun  4 18:11:01 2023",
-            false
-        ],
-        "HW8-Relazione_WISSEL.docx": [
-            "Sun Jun  4 18:11:01 2023",
-            false
-        ],
-        "file_prova.txt": [
-            "Sun Jun  4 18:11:01 2023",
-            false
-        ],
         "id-01-source-discovery.pptx": [
-            "Sun Jun  4 18:11:01 2023",
-            false
+            "Fri Jun  9 10:30:25 2023",
+            true
         ]
     }
 }

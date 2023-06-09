@@ -6,8 +6,10 @@ class PDF_Text_Extractor:
 
     def extract_data(self, list_of_path):
         print("Estrazione dati pdf")
+        print(list_of_path)
         dict_path_dict_page_text = {}
         for file in list_of_path:
+            print(file)
             dict_page_text = {}
             reader = PdfReader(file)
             n_pages = len(reader.pages)
