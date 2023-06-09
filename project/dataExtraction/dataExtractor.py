@@ -1,6 +1,5 @@
 
 import os
-from fileConverter import FileConverter
 from crawler import Crawler
 from extractor_docx import DOCX_Text_Extractor
 from extractor_PDF import PDF_Text_Extractor
@@ -22,38 +21,13 @@ class DataExtractor:
         self.PPPT_extractor=PPTX_Text_Extractor()
         self.DOCX_extractor=DOCX_Text_Extractor()
         self.TXT_extractor=TXT_Text_Extractor()
-        
-        
-        
+
         self.index={}
         self.index_path="index.json"
         
-    
-    def extract_data_from_pdf(self,file):
-
-        output=dict()
-        pdfObj=open(file,'rb',encoding="ISO")
-
-        pdfReader=PyPDF2.PdfReader(pdfObj)
-
-        
-        slide_number=1
-        for i in pdfReader.pages:
-
-            text=i.extract_text()
-            output[slide_number]=text
-            slide_number+=1
-
-
-
-        
-
-        pdfObj.close()
-        return output
-
     def save_index(self):
-        with open(self.index_path, "w") as json_file:
-            json.dump(self.index, json_file,indent=4, sort_keys=True)
+        with open(self.index_path, "w", encoding="utf8") as json_file:
+            json.dump(self.index, json_file, indent=4, sort_keys=True, ensure_ascii=False)
 
     def extract_data_old(self):
         for filename in os.listdir(self.public_folder):
