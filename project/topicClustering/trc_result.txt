@@ -1,0 +1,65 @@
+Clusters 0
+ tipo
+ grammatiche
+ linguaggio
+ linguaggi
+ vn
+ esempio
+ linguaggio grammatiche
+ grammatica
+ stringa
+ generato
+
+
+Clusters 1
+ lab
+ lab lba
+ labab abcd
+ dire seguenti affermazioni
+ esercizio dire
+ esercizio dire seguenti
+ false
+ false baa
+ false baa labab
+ lab lab
+
+
+Clusters 2
+ insieme
+ insiemi
+ cardinalità
+ numerabile
+ relazione
+ dimostrazione
+ teorema
+ numerabilità
+ ogni
+ numeri
+
+
+Clusters 3
+ espressioni
+ regolari
+ esercizio
+ espressioni regolari
+ numeri
+ espressione
+ espressione regolare
+ scrivere
+ regolare
+ naturali
+
+
+Clusters 4
+ xn
+ funzione
+ pidgeonhole
+ pidgeonhole principle
+ principle
+ iniettiva
+ totale
+ xn xn
+ dimostrazione
+ esiste
+
+
