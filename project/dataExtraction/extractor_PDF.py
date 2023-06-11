@@ -16,6 +16,9 @@ class PDF_Text_Extractor:
             for i in range(n_pages):
                 page = reader.pages[i]
                 text = page.extract_text()
-                dict_page_text[str(i)] = text
-            dict_path_dict_page_text[file] = dict_page_text
+                key=file+"#"+str(i)
+                dict_path_dict_page_text[key]=text
+                #old version of saving pages
+                #dict_page_text[str(i)] = text
+            #dict_path_dict_page_text[file] = dict_page_text
         return dict_path_dict_page_text

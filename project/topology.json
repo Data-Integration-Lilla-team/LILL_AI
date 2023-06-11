@@ -75,6 +75,28 @@
             true
         ]
     },
+    "dataExtraction\\data_test\\rootfolder\\universita\\ing dei dati": {
+        "id-00-presentazione-corso.pptx": [
+            "Sun Jun 11 20:43:09 2023",
+            true
+        ],
+        "id-01-source-discovery.pptx": [
+            "Sun Jun 11 20:43:09 2023",
+            true
+        ],
+        "id-01.1-source-discovery-background.pptx": [
+            "Sun Jun 11 20:43:09 2023",
+            true
+        ],
+        "id-01.1p-lucene.pptx": [
+            "Sun Jun 11 20:43:09 2023",
+            true
+        ],
+        "id-01.2-source-discovery-join-table.pptx": [
+            "Sun Jun 11 20:43:09 2023",
+            true
+        ]
+    },
     "dataExtraction\\data_test\\rootfolder\\universita\\quantum computing": {
         "00-introduzione-corso-01.pdf": [
             "Fri Jun  9 17:45:58 2023",
@@ -136,7 +158,12 @@
         ]
     },
     "dataExtraction\\data_test\\rootfolder\\varie": {},
-    "dataExtraction\\data_test\\rootfolder\\varie\\ricette": {},
+    "dataExtraction\\data_test\\rootfolder\\varie\\ricette": {
+        "15-quantum-un-qubit-heisenberg-02.pdf": [
+            "Sun Jun 11 20:14:37 2023",
+            true
+        ]
+    },
     "dataExtraction\\data_test\\rootfolder\\varie\\spesa": {
         "id-01-source-discovery.pptx": [
             "Fri Jun  9 10:30:25 2023",
