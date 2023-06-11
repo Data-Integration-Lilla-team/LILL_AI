@@ -42,7 +42,7 @@ import shutil
 #4. lista di file .docx da indicizzare
 class Fringe:
     def __init__(self):
-          self.fringe={"pdf":[],"pptx":[],"docx":[],"txt":[]}   #lista di file da indicizzare
+          self.fringe={"pdf":[],"pptx":[]}   #lista di file da indicizzare
 
     def add_elements(self, list,root):
          for k in list.keys():
@@ -56,9 +56,9 @@ class Fringe:
 class Crawler:
     def __init__(self) -> None:
         self.rootFolder = os.path.join("dataExtraction", "data_test", "rootfolder")
-        self.extensions=set(["pdf","txt","pptx","docx"])
-        self.dir_topology=r"topology.json"
-        self.file_to_index=r"file_to_index.json"
+        self.extensions=set(["pdf","pptx"])
+        self.dir_topology=os.path.join("topology.json")
+        self.file_to_index=os.path.join("file_to_index.json")
         
 
 
@@ -159,90 +159,23 @@ class Crawler:
         
         return fringe
 
-    #Metodo principale.
-    #Si susseguono: 1. Creazione, aggiornamento topology.json
-    #               2. Individuazione nuovi file
-    def crawl(self):
-         topology=self.gather_paths()
-         self.print_topology(topology)
-         new_files=self.create_list_new_files()
-         return new_files
+    
          
-#funzione di test       
-def update_topology(path):
-    with open(path, "r") as file:
-        # Load the JSON data into a dictionary
-        data = json.load(file)
-    
-    for dirs in data.keys():
-         if len(data[dirs])>=1:
-              files=data[dirs]
-              for file in files.keys():
-                   files[file][1]=False
-    
-    with open(path,"w") as file:
-         json.dump(data, file,indent=4, sort_keys=True)
+
 
 
 #metodo di test che simula l'inserimento da parte dell'utente di nuovi file
-def move_new_file():
+#Metodo principale.
+    #Si susseguono: 1. Creazione, aggiornamento topology.json
+    #               2. Individuazione nuovi file
+    def crawl_1(self):
+         topology=self.gather_paths()
+         self.print_topology(topology)
+        
     
-
-        # Specify the source file path
-        source_file = r"dataExtraction\data_test\new_data\040-algoritmi-link-state-packet-01.pdf"
-
-        # Specify the destination file path
-        destination_file = r"dataExtraction\data_test\rootfolder\varie\spesa\040-algoritmi-link-state-packet-01.pdf"
-
-        shutil.copy(source_file, destination_file)
-
-        src_pptx=r"dataExtraction\data_test\new_data\HW8-DataIntegration_WISSEL.pptx"
-        dest_pptx=r"dataExtraction\data_test\rootfolder\varie\spesa\id-01-source-discovery.pptx"
-
-        shutil.copy(src_pptx, dest_pptx)
-        src_docx=r"dataExtraction\data_test\new_data\HW8-Relazione_WISSEL.docx"
-        dest_docx=r"dataExtraction\data_test\rootfolder\varie\spesa\HW8-Relazione_WISSEL.docx"
-        shutil.copy(src_docx, dest_docx)
-
-        src_text=r"dataExtraction\data_test\new_data\file_prova.txt"
-        dest_path=r"dataExtraction\data_test\rootfolder\varie\spesa\file_prova.txt"
-        # Copy the file from the source to the destination
-        shutil.copy(src_text,dest_path)
-
-        print("File copied successfully.")
-
-def test_case1():
-    
-    print("FIRST CRAWL")
-    crawler=Crawler()
-    new_files=crawler.crawl()
-    for k in new_files.fringe.keys():
-         print(k)
-         print(new_files.fringe[k])
-
-    #il modulo di dataExtraction indicizza i dati
-
-    print("DATA EXTRACTION")
-    update_topology(crawler.dir_topology)
-
-
-    #viene inserito un nuovo file nel dump 
-    move_new_file()
-
-
-    print("SECOND CRAWL")
-    #il crawler è richiamato ad individuare i nuovi file
-    new_files=crawler.crawl()
-    for k in new_files.fringe.keys():
-         print(k)
-         print(new_files.fringe[k])
-    
-    
-     
-if __name__=="__main__":
-
-   test_case1()
-   
+    def crawl_2(self):
+        new_files=self.create_list_new_files()
+        return new_files
     
     
    

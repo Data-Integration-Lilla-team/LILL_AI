@@ -5,6 +5,7 @@ from extractor_docx import DOCX_Text_Extractor
 from extractor_PDF import PDF_Text_Extractor
 from extractor_pptx import PPTX_Text_Extractor
 from extractor_txt import TXT_Text_Extractor
+import pandas as pd
 
 import json
 
@@ -24,46 +25,54 @@ class DataExtractor:
 
         self.index={}
         self.index_path="index.json"
-        
+        self.index_csv_path="index_csv.csv"
+
+    def save_index_csv(self):
+        columns=["path","page","text"]
+        data=[]
+        for k in self.index:
+            file_name_and_page=k.split("#")
+            file_name=file_name_and_page[0]
+            page_number=int(file_name_and_page[1])
+            text=self.index[k]
+            current_data=[file_name,page_number,text]
+            data.append(current_data)
+
+        pd.DataFrame(data=data,columns=columns).to_csv(self.index_csv_path,index=False)  
     def save_index(self):
         with open(self.index_path, "w", encoding="utf8") as json_file:
             json.dump(self.index, json_file, indent=4, sort_keys=True, ensure_ascii=False)
 
-    def extract_data_old(self):
-        for filename in os.listdir(self.public_folder):
-            file_path = os.path.join(self.public_folder, filename)
-            
-            if os.path.isfile(file_path):
-            
-                if self.EXTENSIONS not in filename:
-                    filename=self.converter.convert_into_PDF(filename,file_path,self.public_folder)
-                    print("[CONVERITTO]",filename)
-                else:
-                    print("[NON CONVERTITO]",filename)
-
-                print("[START]",filename)
-                self.index[filename]=self.extract_data_from_pdf(file_path)
-                print("[FINISH]",filename+"\n")
-
-        
-        self.save_index()
+    
 
     #utilizza il crawler per individuare i file da indicizzare
     def extract_data_new(self):
-        files_to_elab=self.crawler.crawl()
+        self.crawler.crawl_1()
+        
+        
+        files_to_elab=self.crawler.crawl_2()
+        print(len(files_to_elab.fringe))
+        values_ppt=dict()
         for k in files_to_elab.fringe.keys():
             if k=="pdf":
                 
-                self.PDF_extractor.extract_data(files_to_elab.fringe[k])
+                values_pdf=self.PDF_extractor.extract_data(files_to_elab.fringe[k])
+                pass
             elif k=="pptx":
-                self.PPPT_extractor.extract_data(files_to_elab.fringe[k])
-            
-            elif k=="docx":
-                self.DOCX_extractor.extract_data(files_to_elab.fringe[k])
+                #values_ppt=self.PPPT_extractor.extract_data(files_to_elab.fringe[k])
+                pass
+        self.index = values_pdf.copy()  # Create a copy of the first dictionary
 
-            else:
-                self.TXT_extractor.extract_data(files_to_elab.fringe[k])
+        self.index.update(values_ppt)  # Update the copy with the second dictionary
+
+        self.save_index() 
+
+        self.save_index_csv()
         
+
+        
+            
+           
 
                 
     
