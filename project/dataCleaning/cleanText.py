@@ -1,14 +1,13 @@
 import pandas as pd
-from sklearn.feature_extraction.text import TfidfTransformer
-from sklearn.cluster import KMeans
-from sklearn.metrics import adjusted_rand_score
 
+from wordcloud import WordCloud
 import string
 from stop_words import get_stop_words
 from nltk.corpus import stopwords
 import json
 import glob
 import re
+import matplotlib.pyplot as plt
 
 
 class DataCleaner:
@@ -69,19 +68,7 @@ class DataCleaner:
         return (final)
 
     
-    def clean_docs(self,data):
-        stops=stopwords.words("italian")
-        final={}
-        for key in data.keys():
-            all_pages=data[key]
-            all_pages_parsed=[""]
-            for pages in all_pages:
-                clean_doc=self.remove_stops(pages,stops)
-                print("clean doc",clean_doc)
-                all_pages_parsed.append(clean_doc)
-                
-            final[key]=all_pages_parsed
-        self.write_data("index_parsed.json",final) 
+    
             
 
 
@@ -98,13 +85,33 @@ class DataCleaner:
         clean_data=self.clean_text(data["text"])
         #altri metodi di cleaning vanno inseiti qui
         data["parsed_text"]=clean_data
-
+        data = data.sort_values(by=['path', 'page'])
         data.to_csv("index_csv_parsed.csv",index=False)
+        return data["parsed_text"]
 
 
+    #Mostra il word to cloud
+    def create_word_cloud(self):
+        data=pd.read_csv("index_csv_parsed.csv")
+        data=data["parsed_text"]
+        # Join the different processed titles together.
+        long_string = ','.join(list(data))
+        print(long_string)
+        # Create a WordCloud object
+        wordcloud = WordCloud(background_color="white", max_words=5000, contour_width=3, contour_color='steelblue')
+        # Generate a word cloud
+        wordcloud.generate(long_string)
+        # Visualize the word cloud
+        # Display the word cloud using matplotlib
+        plt.figure(figsize=(10, 5))
+        plt.imshow(wordcloud, interpolation='bilinear')
+        plt.axis('off')
+        plt.show()
 
 
 
 if __name__=="__main__":
     cleaner=DataCleaner()
-    cleaner.clean_data()
+    #cleaner.clean_data()       #parsa i dati e li memorizza in una nuova colonna dell'indice csv
+    cleaner.create_word_cloud()
+    

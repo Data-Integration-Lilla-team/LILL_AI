@@ -38,7 +38,10 @@ class DataExtractor:
             current_data=[file_name,page_number,text]
             data.append(current_data)
 
-        pd.DataFrame(data=data,columns=columns).to_csv(self.index_csv_path,index=False)  
+        data=pd.DataFrame(data=data,columns=columns)
+        data = data.sort_values(by=['path', 'page'])
+        
+        data.to_csv(self.index_csv_path,index=False)  
     def save_index(self):
         with open(self.index_path, "w", encoding="utf8") as json_file:
             json.dump(self.index, json_file, indent=4, sort_keys=True, ensure_ascii=False)
