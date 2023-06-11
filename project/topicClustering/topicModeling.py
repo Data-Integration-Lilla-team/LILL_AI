@@ -10,6 +10,8 @@ import pickle
 import pyLDAvis
 import os
 import pickle
+from gensim.models import CoherenceModel
+
 class LDAModel:
         def __init__(self):
              
@@ -146,7 +148,7 @@ class LDAModel:
             lda_model = gensim.models.LdaModel.load(self.model_path)
             dictionary = corpora.Dictionary.load(self.id2word_path)
                 # Preprocess the new text
-            new_text = "d3.js bar plot"
+            new_text = "d3 js"
             new_text = new_text.lower().split()
             new_text_bow = dictionary.doc2bow(new_text)
     
