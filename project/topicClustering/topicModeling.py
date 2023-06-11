@@ -142,12 +142,29 @@ class LDAModel:
             return [topics_column,topics_percetage_column]
                         
 
+        def test(self):
+            lda_model = gensim.models.LdaModel.load(self.model_path)
+            dictionary = corpora.Dictionary.load(self.id2word_path)
+                # Preprocess the new text
+            new_text = "d3.js bar plot"
+            new_text = new_text.lower().split()
+            new_text_bow = dictionary.doc2bow(new_text)
+    
+            # Get the topics related to the new text
+            topics = lda_model.get_document_topics(new_text_bow)
 
+            # Print the topics
+            for topic in topics:
+                print("Topic {}: {:.2%}".format(topic[0], topic[1]))
+
+     
 if __name__=="__main__":
      model=LDAModel()
      #model.train_model()
      
      #individuo i topics per ogni frase
+
+     '''
      data=pd.read_csv("index_csv_parsed.csv")
      
      text=data["parsed_text"].apply(lambda x: x.lower().split())
@@ -159,4 +176,9 @@ if __name__=="__main__":
      data["topics2perc"]=predicted_topics_perc
 
      data.to_csv("index_with_topics.csv",index=False)
+     '''
+
+     model.test()
+
+
 
