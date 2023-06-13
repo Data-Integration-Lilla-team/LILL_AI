@@ -3,170 +3,148 @@
     "dataExtraction\\data_test\\rootfolder\\universita": {},
     "dataExtraction\\data_test\\rootfolder\\universita\\algoBigData": {
         "00-introduzione-corso-01.pdf": [
-            "Fri Jun  9 17:45:53 2023",
+            "Tue Jun 13 14:03:13 2023",
             true
         ],
         "05-quantum-introduzione-03.pdf": [
-            "Fri Jun  9 17:45:53 2023",
+            "Tue Jun 13 14:03:13 2023",
             true
         ],
         "10-quantum-un-qubit-04.pdf": [
-            "Fri Jun  9 17:45:53 2023",
+            "Tue Jun 13 14:03:13 2023",
             true
         ],
         "15-quantum-un-qubit-heisenberg-02.pdf": [
-            "Fri Jun  9 17:45:54 2023",
+            "Tue Jun 13 14:03:14 2023",
             true
         ]
     },
     "dataExtraction\\data_test\\rootfolder\\universita\\algoBigData\\primoEsonero": {
         "020-linguaggi-e-grammatiche-24.pdf": [
-            "Fri Jun  9 17:45:54 2023",
+            "Tue Jun 13 14:03:14 2023",
             true
         ]
     },
-    "dataExtraction\\data_test\\rootfolder\\universita\\analisiProgettazioneSoftware": {
-        "hofmeister2005.pdf": [
-            "Fri Jun  9 17:45:55 2023",
-            true
-        ]
-    },
+    "dataExtraction\\data_test\\rootfolder\\universita\\analisiProgettazioneSoftware": {},
     "dataExtraction\\data_test\\rootfolder\\universita\\automata": {
         "020-linguaggi-e-grammatiche-24.pdf": [
-            "Fri Jun  9 17:45:55 2023",
+            "Tue Jun 13 13:59:02 2023",
             true
         ],
         "022-espressioni-regolari-07.pdf": [
-            "Fri Jun  9 17:45:56 2023",
+            "Tue Jun 13 13:59:14 2023",
             true
         ],
         "025-cardinalita-transfinite-06.pdf": [
-            "Fri Jun  9 17:45:56 2023",
+            "Sun Jun 11 21:27:37 2023",
             true
         ]
     },
     "dataExtraction\\data_test\\rootfolder\\universita\\basiDiDati": {
         "0.1-Intro.pdf": [
-            "Fri Jun  9 17:45:56 2023",
+            "Tue Jun 13 13:59:19 2023",
             true
         ],
         "0.2-Modello Relazionale 1.pdf": [
-            "Fri Jun  9 17:45:56 2023",
+            "Tue Jun 13 13:59:20 2023",
             true
         ],
         "0.2-Modello Relazionale 2.pdf": [
-            "Fri Jun  9 17:45:57 2023",
+            "Tue Jun 13 13:59:20 2023",
             true
         ],
         "0.5-Algebra Relazionale.pdf": [
-            "Fri Jun  9 17:45:57 2023",
+            "Tue Jun 13 13:59:21 2023",
             true
         ],
         "0.6-Algebra Relazionale.pdf": [
-            "Fri Jun  9 17:45:57 2023",
+            "Sun Jun 11 21:27:38 2023",
             true
         ],
         "0.7-ALgebra Relazionale 2.pdf": [
-            "Fri Jun  9 17:45:58 2023",
+            "Sun Jun 11 21:27:38 2023",
             true
         ],
         "0.8-Algebra Relazionale 2.pdf": [
-            "Fri Jun  9 17:45:58 2023",
+            "Tue Jun 13 13:59:22 2023",
             true
         ]
     },
     "dataExtraction\\data_test\\rootfolder\\universita\\ing dei dati": {
         "id-00-presentazione-corso.pptx": [
-            "Sun Jun 11 20:43:09 2023",
+            "Tue Jun 13 13:59:29 2023",
             true
         ],
         "id-01-source-discovery.pptx": [
-            "Sun Jun 11 20:43:09 2023",
+            "Sun Jun 11 21:24:41 2023",
             true
         ],
         "id-01.1-source-discovery-background.pptx": [
-            "Sun Jun 11 20:43:09 2023",
+            "Tue Jun 13 13:59:30 2023",
             true
         ],
         "id-01.1p-lucene.pptx": [
-            "Sun Jun 11 20:43:09 2023",
+            "Sun Jun 11 21:24:43 2023",
             true
         ],
         "id-01.2-source-discovery-join-table.pptx": [
-            "Sun Jun 11 20:43:09 2023",
+            "Sun Jun 11 21:24:43 2023",
             true
         ]
     },
     "dataExtraction\\data_test\\rootfolder\\universita\\quantum computing": {
         "00-introduzione-corso-01.pdf": [
-            "Fri Jun  9 17:45:58 2023",
+            "Tue Jun 13 13:59:40 2023",
             true
         ],
         "05-quantum-introduzione-03.pdf": [
-            "Fri Jun  9 17:45:58 2023",
+            "Tue Jun 13 13:59:41 2023",
             true
         ],
         "10-quantum-un-qubit-04.pdf": [
-            "Fri Jun  9 17:45:58 2023",
+            "Sun Jun 11 21:27:39 2023",
             true
         ],
         "15-quantum-un-qubit-heisenberg-02.pdf": [
-            "Fri Jun  9 17:45:59 2023",
+            "Sun Jun 11 21:27:40 2023",
             true
         ]
     },
     "dataExtraction\\data_test\\rootfolder\\universita\\retiDiCalcolatori": {
         "020-instradamento-01.pdf": [
-            "Fri Jun  9 17:45:59 2023",
+            "Tue Jun 13 13:59:46 2023",
             true
         ],
         "040-algoritmi-link-state-packet-01.pdf": [
-            "Fri Jun  9 17:45:59 2023",
+            "Tue Jun 13 13:59:47 2023",
             true
         ]
     },
     "dataExtraction\\data_test\\rootfolder\\universita\\sistemi_inteliggenti": {
         "020-linguaggi-e-grammatiche-24.pdf": [
-            "Fri Jun  9 17:45:59 2023",
+            "Tue Jun 13 13:59:52 2023",
             true
         ],
         "022-espressioni-regolari-07.pdf": [
-            "Fri Jun  9 17:46:00 2023",
+            "Tue Jun 13 13:59:53 2023",
             true
         ],
         "025-cardinalita-transfinite-06.pdf": [
-            "Fri Jun  9 17:46:00 2023",
+            "Tue Jun 13 13:59:54 2023",
             true
         ]
     },
-    "dataExtraction\\data_test\\rootfolder\\universita\\visualizzazioneDati": {
-        "100-web-dev-10.pdf": [
-            "Fri Jun  9 17:46:01 2023",
-            true
-        ],
-        "110-web-graphics-05.pdf": [
-            "Fri Jun  9 17:46:01 2023",
-            true
-        ],
-        "120-hands-on-d3-js-10.pdf": [
-            "Fri Jun  9 17:46:01 2023",
-            true
-        ],
-        "130-interaction-08.pdf": [
-            "Fri Jun  9 17:46:02 2023",
-            true
-        ]
-    },
+    "dataExtraction\\data_test\\rootfolder\\universita\\visualizzazioneDati": {},
     "dataExtraction\\data_test\\rootfolder\\varie": {},
     "dataExtraction\\data_test\\rootfolder\\varie\\ricette": {
         "15-quantum-un-qubit-heisenberg-02.pdf": [
-            "Sun Jun 11 20:14:37 2023",
+            "Sun Jun 11 21:27:43 2023",
             true
         ]
     },
     "dataExtraction\\data_test\\rootfolder\\varie\\spesa": {
         "id-01-source-discovery.pptx": [
-            "Fri Jun  9 10:30:25 2023",
+            "Sun Jun 11 20:50:52 2023",
             true
         ]
     }

@@ -25,7 +25,7 @@ class DataExtractor:
 
         self.index={}
         self.index_path="index.json"
-        self.index_csv_path="index_csv.csv"
+        self.index_csv_path=r"dataExtraction\output\index_csv.csv"
 
     def save_index_csv(self):
         columns=["path","page","text"]
@@ -60,10 +60,10 @@ class DataExtractor:
             if k=="pdf":
                 
                 values_pdf=self.PDF_extractor.extract_data(files_to_elab.fringe[k])
-                pass
+                
             elif k=="pptx":
-                #values_ppt=self.PPPT_extractor.extract_data(files_to_elab.fringe[k])
-                pass
+                values_ppt=self.PPPT_extractor.extract_data(files_to_elab.fringe[k])
+                
         self.index = values_pdf.copy()  # Create a copy of the first dictionary
 
         self.index.update(values_ppt)  # Update the copy with the second dictionary
@@ -72,7 +72,6 @@ class DataExtractor:
 
         self.save_index_csv()
         
-
         
             
            

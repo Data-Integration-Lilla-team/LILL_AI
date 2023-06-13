@@ -19,7 +19,7 @@ class PPTX_Text_Extractor:
         for file in list_of_path:
             presentation = Presentation(file)
             for idx, slide in enumerate(presentation.slides):
-                print(idx)
+                
                 text = ""
                 for shape in slide.shapes:
                     if hasattr(shape, "text"):

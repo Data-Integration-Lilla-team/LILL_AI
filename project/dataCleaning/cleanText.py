@@ -1,5 +1,5 @@
 import pandas as pd
-
+import spacy        #per la lemmizzazione delle parole
 from wordcloud import WordCloud
 import string
 from stop_words import get_stop_words
@@ -7,14 +7,37 @@ from nltk.corpus import stopwords
 import json
 import glob
 import re
+import json
 import matplotlib.pyplot as plt
+'''
+Classe specializzata nella puliza dei dati
+1. eliminazione stopwords
+2. eliminazione parole con lunghezza minor di 2
+3. eliminazione simboli non lettere (non presenti nella lista di punctuations di string.punctuations)
+4. lemming delle parole
+5. può continuare
 
+'''
 
 class DataCleaner:
     
     def __init__(self):
         self.index_path="index_csv.csv"
+        self.symbols_path=r"dataCleaning\symbols.json"
+        self.puntuations=self.read_symbols(self.symbols_path)
+        self.puntuations.update(["•","–"])       #da aggiungere altri custom punctuation
 
+
+    def read_symbols(self,path):
+        with open(path, 'r') as file:
+            json_data = file.read()
+
+        # Convert the JSON data back to a list
+        set_list = json.loads(json_data)
+
+        # Convert the list to a set
+        my_set = set(set_list)
+        return my_set
 
 
     def load_data(self):
@@ -67,16 +90,59 @@ class DataCleaner:
         
         return (final)
 
-    
+    def remove_custom_punct(self,text):
+        translator = str.maketrans('', '', ''.join(self.puntuations))
+        return text.translate(translator)
+
+    def remove_doubleCharWords(self,line):
+        words=line.split()
+        final=[]
+        for i in words:
+            if len(i)>2:
+                words=self.remove_custom_punct(i)
+                final.append(words)
+            
+                
+        final=" ".join(final)
+
+        return final
+        
+    def lemming_text(self, text):
+        # Load the Italian language model
+        nlp = spacy.load("it_core_news_sm")
+        # Process the text with spaCy
+        doc = nlp(text)
+        # Lemmatize each token in the text
+        lemmas = [token.lemma_ for token in doc]
+        # Print the lemmas
+        text=" ".join(lemmas)
+        return text
     
             
+    def find_none_spaced_words(self,text):
+       
+       
+            
+        text_with_space = re.sub(r"(\w)([A-Z])", r"\1 \2", text)
 
+        
+        return text_with_space
+
+    def delete_double_spaces(self,text):
+        text_without_double_spaces = re.sub(r"\s+", " ", text)
+        return text_without_double_spaces
+    
 
     def clean_text(self, data):
         new_text=[]
         stops=stopwords.words("italian")
         for i in data:
-            parsed_text=self.remove_stops(i,stops)
+            #rimozione di tutte le parole che non hanno lunghezza maggiore di 2
+            parsed_text=self.find_none_spaced_words(i)              #andiamo a dividere eventuali parole distinte, concatenate (es. HelloWord->Hello World)
+            parsed_text=self.remove_stops(parsed_text,stops)                  #rimozione stopwords
+            parsed_text=self.remove_doubleCharWords(parsed_text)    #rimozione parole e simboli superflui
+            parsed_text=self.delete_double_spaces(parsed_text)
+            #parsed_text=self.lemming_text(parsed_text)              #lemming delle parole
             new_text.append(parsed_text)
         return new_text
     
@@ -86,7 +152,7 @@ class DataCleaner:
         #altri metodi di cleaning vanno inseiti qui
         data["parsed_text"]=clean_data
         data = data.sort_values(by=['path', 'page'])
-        data.to_csv("index_csv_parsed.csv",index=False)
+        data.to_csv(r"dataCleaning\output\index_csv_parsed.csv",index=False)
         return data["parsed_text"]
 
 
@@ -112,6 +178,6 @@ class DataCleaner:
 
 if __name__=="__main__":
     cleaner=DataCleaner()
-    #cleaner.clean_data()       #parsa i dati e li memorizza in una nuova colonna dell'indice csv
-    cleaner.create_word_cloud()
+    cleaner.clean_data()       #parsa i dati e li memorizza in una nuova colonna dell'indice csv
+    #cleaner.create_word_cloud()
     

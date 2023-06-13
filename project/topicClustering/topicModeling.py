@@ -16,7 +16,7 @@ class LDAModel:
         def __init__(self):
              
             self.stop_words = stopwords.words('italian')
-            self.path_data_file="index_csv_parsed.csv"
+            self.path_data_file=r"dataCleaning\output\index_csv_parsed.csv"
             self.column_data="parsed_text"
             self.lda_model=None
             self.model_path=r"topicClustering\model.lda"
@@ -159,28 +159,30 @@ class LDAModel:
             for topic in topics:
                 print("Topic {}: {:.2%}".format(topic[0], topic[1]))
 
+        def cluster_text(self):
+            data=pd.read_csv(self.path_data_file).fillna("")
+     
+            text=data["parsed_text"].apply(lambda x: x.split())
+            
+            predicted_topics=model.predict_topics(text)
+            predicted_topics_col=predicted_topics[0]
+            predicted_topics_perc=predicted_topics[1]
+            data["topics"]=predicted_topics_col
+            data["topics2perc"]=predicted_topics_perc
+
+            data.to_csv(r"topicClustering\output\index_with_topics.csv",index=False)
      
 if __name__=="__main__":
-     model=LDAModel()
+    model=LDAModel()
      #model.train_model()
      
      #individuo i topics per ogni frase
-
-     '''
-     data=pd.read_csv("index_csv_parsed.csv")
+    model.cluster_text()
      
-     text=data["parsed_text"].apply(lambda x: x.lower().split())
      
-     predicted_topics=model.predict_topics(text)
-     predicted_topics_col=predicted_topics[0]
-     predicted_topics_perc=predicted_topics[1]
-     data["topics"]=predicted_topics_col
-     data["topics2perc"]=predicted_topics_perc
+     
 
-     data.to_csv("index_with_topics.csv",index=False)
-     '''
-
-     model.test()
+     #model.test()
 
 
 
