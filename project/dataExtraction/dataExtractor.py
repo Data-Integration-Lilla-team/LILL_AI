@@ -32,7 +32,7 @@ class DataExtractor:
         data=[]
         for k in self.index:
             file_name_and_page=k.split("#")
-            file_name=file_name_and_page[0]
+            file_name=file_name_and_page[0]+"#"+str(file_name_and_page[1])
             page_number=int(file_name_and_page[1])
             text=self.index[k]
             current_data=[file_name,page_number,text]
