@@ -55,7 +55,7 @@ class Fringe:
                 
 class Crawler:
     def __init__(self) -> None:
-        self.rootFolder = os.path.join("dataExtraction", "data_test", "rootfolder")
+        self.rootFolder = os.path.join("data_test", "rootfolder")
         self.extensions=set(["pdf","pptx"])
         self.dir_topology=os.path.join("topology.json")
         self.file_to_index=os.path.join("file_to_index.json")

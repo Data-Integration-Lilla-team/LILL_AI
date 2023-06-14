@@ -148,7 +148,7 @@ class LDAModel:
             lda_model = gensim.models.LdaModel.load(self.model_path)
             dictionary = corpora.Dictionary.load(self.id2word_path)
                 # Preprocess the new text
-            new_text = "d3 js"
+            new_text = "linear regression, machine learning"
             new_text = new_text.lower().split()
             new_text_bow = dictionary.doc2bow(new_text)
     
@@ -174,15 +174,15 @@ class LDAModel:
      
 if __name__=="__main__":
     model=LDAModel()
-     #model.train_model()
+    #model.train_model()
      
      #individuo i topics per ogni frase
-    model.cluster_text()
+    #model.cluster_text()
      
      
      
 
-     #model.test()
+    model.test()
 
 
 

@@ -9,6 +9,7 @@ import glob
 import re
 import json
 import matplotlib.pyplot as plt
+import numpy as np
 '''
 Classe specializzata nella puliza dei dati
 1. eliminazione stopwords
@@ -22,7 +23,7 @@ Classe specializzata nella puliza dei dati
 class DataCleaner:
     
     def __init__(self):
-        self.index_path="index_csv.csv"
+        self.index_path=r"dataExtraction\output\index_csv.csv"
         self.symbols_path=r"dataCleaning\symbols.json"
         self.puntuations=self.read_symbols(self.symbols_path)
         self.puntuations.update(["•","–"])       #da aggiungere altri custom punctuation
@@ -137,13 +138,20 @@ class DataCleaner:
         new_text=[]
         stops=stopwords.words("italian")
         for i in data:
-            #rimozione di tutte le parole che non hanno lunghezza maggiore di 2
-            parsed_text=self.find_none_spaced_words(i)              #andiamo a dividere eventuali parole distinte, concatenate (es. HelloWord->Hello World)
-            parsed_text=self.remove_stops(parsed_text,stops)                  #rimozione stopwords
-            parsed_text=self.remove_doubleCharWords(parsed_text)    #rimozione parole e simboli superflui
-            parsed_text=self.delete_double_spaces(parsed_text)
-            #parsed_text=self.lemming_text(parsed_text)              #lemming delle parole
+
+            if type(i)==type("s"):
+                #rimozione di tutte le parole che non hanno lunghezza maggiore di 2
+                parsed_text=self.find_none_spaced_words(i)              #andiamo a dividere eventuali parole distinte, concatenate (es. HelloWord->Hello World)
+                parsed_text=self.remove_stops(parsed_text,stops)                  #rimozione stopwords
+                parsed_text=self.remove_doubleCharWords(parsed_text)    #rimozione parole e simboli superflui
+                parsed_text=self.delete_double_spaces(parsed_text)
+                #parsed_text=self.lemming_text(parsed_text)              #lemming delle parole
+                
+            else:
+                parsed_text=""
+                
             new_text.append(parsed_text)
+
         return new_text
     
     def clean_data(self):
