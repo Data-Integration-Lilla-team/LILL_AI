@@ -27,6 +27,7 @@ class DataCleaner:
         self.symbols_path=r"dataCleaning\symbols.json"
         self.puntuations=self.read_symbols(self.symbols_path)
         self.puntuations.update(["•","–"])       #da aggiungere altri custom punctuation
+        self.max_length=16
 
 
     def read_symbols(self,path):
@@ -77,7 +78,8 @@ class DataCleaner:
         final=[]
         for word in words:
             if word not in stops:
-                final.append(word)
+                if len(word)<self.max_length:
+                    final.append(word)
         final=" ".join(final)
 
         #punti
@@ -137,6 +139,7 @@ class DataCleaner:
     def clean_text(self, data):
         new_text=[]
         stops=stopwords.words("italian")
+        stops.extend(stopwords.words("english"))
         for i in data:
 
             if type(i)==type("s"):

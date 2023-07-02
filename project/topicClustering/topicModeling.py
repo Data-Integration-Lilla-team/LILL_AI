@@ -23,7 +23,7 @@ class LDAModel:
             self.id2word_path=r"topicClustering\id2token.mm"
             self.corpus_path=r"topicClustering\corpus.mm"
             #iperparametri
-            self.number_topics=10
+            self.number_topics=50
             self.top_k_topics=5
         
         def sent_to_words(self,sentences):
@@ -174,10 +174,10 @@ class LDAModel:
      
 if __name__=="__main__":
     model=LDAModel()
-    #model.train_model()
+    model.train_model()
      
      #individuo i topics per ogni frase
-    #model.cluster_text()
+    model.cluster_text()
      
      
      
