@@ -1,417 +1,699 @@
 {
     "data_test\\rootfolder": {},
     "data_test\\rootfolder\\universit\u00e0": {},
+    "data_test\\rootfolder\\universit\u00e0\\AlgoritmiStruttureDati": {
+        "040-notazione-asintotica-14.pdf": [
+            "Sun Jul  2 20:18:32 2023",
+            true
+        ],
+        "060-ordinamento-06.pdf": [
+            "Sun Jul  2 20:18:33 2023",
+            true
+        ],
+        "070-ricorsione-e-complessita-06.pdf": [
+            "Sun Jul  2 20:18:33 2023",
+            true
+        ],
+        "080-tipi-astratti-di-dato-04.pdf": [
+            "Sun Jul  2 20:18:34 2023",
+            true
+        ],
+        "090-liste-tramite-array-03.pdf": [
+            "Sun Jul  2 20:18:34 2023",
+            true
+        ],
+        "100-liste-tramite-oggetti-08.pdf": [
+            "Sun Jul  2 20:18:34 2023",
+            true
+        ],
+        "110-alberi-radicati-08.pdf": [
+            "Sun Jul  2 20:18:34 2023",
+            true
+        ],
+        "120-visite-di-alberi-05.pdf": [
+            "Sun Jul  2 20:18:35 2023",
+            true
+        ],
+        "130-heap-11.pdf": [
+            "Sun Jul  2 20:18:36 2023",
+            true
+        ],
+        "140-quick-sort-06.pdf": [
+            "Sun Jul  2 20:18:40 2023",
+            true
+        ],
+        "160-alberi-rosso-neri-11.pdf": [
+            "Sun Jul  2 20:18:40 2023",
+            true
+        ],
+        "170-complessita-problemi-08.pdf": [
+            "Sun Jul  2 20:18:41 2023",
+            true
+        ],
+        "190-tabelle-hash-08.pdf": [
+            "Sun Jul  2 20:18:41 2023",
+            true
+        ],
+        "210-grafi-matrici-e-liste-03.pdf": [
+            "Sun Jul  2 20:18:41 2023",
+            true
+        ],
+        "230-visita-in-ampiezza-02.pdf": [
+            "Sun Jul  2 20:18:41 2023",
+            true
+        ],
+        "c010-compilazione-in-c-03.pdf": [
+            "Sun Jul  2 20:18:41 2023",
+            true
+        ],
+        "c020-array-e-puntatori-06.pdf": [
+            "Sun Jul  2 20:18:48 2023",
+            true
+        ]
+    },
     "data_test\\rootfolder\\universit\u00e0\\CalcolatoriElettronici": {
         "00_Complementi_Esercizi_Reti_Logiche.pdf": [
-            "Wed Jun 14 12:13:12 2023",
+            "Sun Jul  2 20:18:52 2023",
             true
         ],
         "01_Introduzione.pdf": [
-            "Wed Jun 14 12:13:12 2023",
+            "Sun Jul  2 20:18:53 2023",
             true
         ],
         "02_Mapping_e_decodifica.pdf": [
-            "Wed Jun 14 12:13:12 2023",
+            "Sun Jul  2 20:18:53 2023",
             true
         ],
         "03_Linguaggio_macchina.pdf": [
-            "Wed Jun 14 12:13:12 2023",
+            "Sun Jul  2 20:18:54 2023",
             true
         ],
         "04_Interruzioni.pdf": [
-            "Wed Jun 14 12:13:12 2023",
+            "Sun Jul  2 20:18:55 2023",
             true
         ],
         "05_Handshake.pdf": [
-            "Wed Jun 14 12:13:12 2023",
+            "Sun Jul  2 20:18:55 2023",
             true
         ],
         "06_PIC.pdf": [
-            "Wed Jun 14 12:13:12 2023",
+            "Sun Jul  2 20:18:56 2023",
             true
         ],
         "07_DLX_sequenziale.pdf": [
-            "Wed Jun 14 12:13:12 2023",
+            "Sun Jul  2 20:18:56 2023",
             true
         ],
         "08_DLX_pipelined.pdf": [
-            "Wed Jun 14 12:13:12 2023",
+            "Sun Jul  2 20:18:56 2023",
+            true
+        ]
+    },
+    "data_test\\rootfolder\\universit\u00e0\\CalcolatoriElettronici2": {
+        "02 Evoluzione dei calcolatori e tipologie di Calcolatori.pdf": [
+            "Sun Jul  2 20:18:58 2023",
+            true
+        ],
+        "03 Sistemi di Numerazione Binaria.pdf": [
+            "Sun Jul  2 20:18:58 2023",
+            true
+        ],
+        "04 Organizzazione di un Calcolatore.pdf": [
+            "Sun Jul  2 20:18:59 2023",
+            true
+        ],
+        "05 Circuiti Digitali e Memorie.pdf": [
+            "Sun Jul  2 20:19:00 2023",
+            true
+        ],
+        "06 Bus.pdf": [
+            "Sun Jul  2 20:19:00 2023",
+            true
+        ],
+        "07 Microarchitettura di una CPU.pdf": [
+            "Sun Jul  2 20:19:00 2023",
+            true
+        ],
+        "08 Il linguaggio assemblativo 8088.pdf": [
+            "Sun Jul  2 20:19:01 2023",
+            true
+        ]
+    },
+    "data_test\\rootfolder\\universit\u00e0\\ControlloDigitale": {
+        "01StrumentiMatematici.pdf": [
+            "Sun Jul  2 20:19:02 2023",
+            true
+        ],
+        "03Ricostruzione.pdf": [
+            "Sun Jul  2 20:19:06 2023",
+            true
+        ],
+        "04SistemiTempoDiscreto 2.pdf": [
+            "Sun Jul  2 20:19:08 2023",
+            true
+        ],
+        "05MappingSZStabilita 2.pdf": [
+            "Sun Jul  2 20:19:09 2023",
+            true
+        ],
+        "IntroCorsoCD-4.pdf": [
+            "Sun Jul  2 20:19:10 2023",
             true
         ]
     },
     "data_test\\rootfolder\\universit\u00e0\\DeepLearning": {
         "01-Introduzione-sbloccato.pdf": [
-            "Wed Jun 14 12:13:12 2023",
+            "Sun Jul  2 20:19:11 2023",
             true
         ],
         "02-MLP_onehot_softmax-sbloccato.pdf": [
-            "Wed Jun 14 12:13:12 2023",
+            "Sun Jul  2 20:19:11 2023",
             true
         ],
         "03-Layers_moduli_keras-sbloccato.pdf": [
-            "Wed Jun 14 12:13:12 2023",
+            "Sun Jul  2 20:19:12 2023",
             true
         ],
         "04-CNN parte 1-sbloccato.pdf": [
-            "Wed Jun 14 12:13:12 2023",
+            "Sun Jul  2 20:19:13 2023",
             true
         ],
         "05-CNN parte 2-sbloccato.pdf": [
-            "Wed Jun 14 12:13:13 2023",
+            "Sun Jul  2 20:19:13 2023",
             true
         ],
         "06-CNN parte 3-sbloccato.pdf": [
-            "Wed Jun 14 12:13:13 2023",
+            "Sun Jul  2 20:19:14 2023",
             true
         ],
         "07-CNN parte 4-sbloccato.pdf": [
-            "Wed Jun 14 12:13:13 2023",
+            "Sun Jul  2 20:19:14 2023",
             true
         ],
         "08-CNN parte 5-sbloccato.pdf": [
-            "Wed Jun 14 12:13:13 2023",
+            "Sun Jul  2 20:19:15 2023",
             true
         ],
         "09-Training Deep 1-sbloccato.pdf": [
-            "Wed Jun 14 12:13:13 2023",
+            "Sun Jul  2 20:19:16 2023",
             true
         ],
         "10-Training Deep 2-sbloccato.pdf": [
-            "Wed Jun 14 12:13:13 2023",
+            "Sun Jul  2 20:19:17 2023",
             true
         ],
         "11-Training Deep 3-sbloccato.pdf": [
-            "Wed Jun 14 12:13:13 2023",
+            "Sun Jul  2 20:19:17 2023",
             true
         ],
         "12-RNN 1-sbloccato.pdf": [
-            "Wed Jun 14 12:13:13 2023",
+            "Sun Jul  2 20:19:18 2023",
             true
         ],
         "13-RNN 2-sbloccato.pdf": [
-            "Wed Jun 14 12:13:13 2023",
+            "Sun Jul  2 20:19:19 2023",
             true
         ],
         "14-Attention e Autoencoders 1-sbloccato.pdf": [
-            "Wed Jun 14 12:13:13 2023",
+            "Sun Jul  2 20:19:20 2023",
             true
         ],
         "15-Attention e Autoencoders 2-sbloccato.pdf": [
-            "Wed Jun 14 12:13:13 2023",
+            "Sun Jul  2 20:19:20 2023",
             true
         ],
         "16-GAN-sbloccato.pdf": [
-            "Wed Jun 14 12:13:13 2023",
+            "Sun Jul  2 20:19:21 2023",
             true
         ],
         "17-RecSys-sbloccato.pdf": [
-            "Wed Jun 14 12:13:13 2023",
+            "Sun Jul  2 20:19:22 2023",
             true
         ],
         "18-NLP-sbloccato.pdf": [
-            "Wed Jun 14 12:13:13 2023",
+            "Sun Jul  2 20:19:22 2023",
             true
         ]
     },
     "data_test\\rootfolder\\universit\u00e0\\FisicaGenerale": {
         "01-introduzione.pdf": [
-            "Wed Jun 14 12:13:13 2023",
+            "Sun Jul  2 20:19:23 2023",
             true
         ],
         "02-vettori.pdf": [
-            "Wed Jun 14 12:13:13 2023",
+            "Sun Jul  2 20:19:23 2023",
             true
         ],
         "03-cinematica.pdf": [
-            "Wed Jun 14 12:13:13 2023",
+            "Sun Jul  2 20:19:24 2023",
             true
         ],
         "04-dinamica-MotiNonIneriziali.pdf": [
-            "Wed Jun 14 12:13:13 2023",
+            "Sun Jul  2 20:19:29 2023",
             true
         ],
         "04-dinamica-integrazione.pdf": [
-            "Wed Jun 14 12:13:13 2023",
+            "Sun Jul  2 20:19:29 2023",
             true
         ],
         "04-dinamica.pdf": [
-            "Wed Jun 14 12:13:13 2023",
+            "Sun Jul  2 20:19:30 2023",
             true
         ],
         "05-lavoro-e-energia.pdf": [
-            "Wed Jun 14 12:13:13 2023",
+            "Sun Jul  2 20:19:31 2023",
             true
         ],
         "06-terzo-principio-e-urti.pdf": [
-            "Wed Jun 14 12:13:13 2023",
+            "Sun Jul  2 20:19:33 2023",
             true
         ],
         "07-dinamica-sistemi.pdf": [
-            "Wed Jun 14 12:13:13 2023",
+            "Sun Jul  2 20:19:34 2023",
             true
         ],
         "08-gravitazione.pdf": [
-            "Wed Jun 14 12:13:13 2023",
+            "Sun Jul  2 20:19:36 2023",
             true
         ],
         "09-elettrostatica.pdf": [
-            "Wed Jun 14 12:13:13 2023",
+            "Sun Jul  2 20:19:36 2023",
             true
         ],
         "10-conduttori.pdf": [
-            "Wed Jun 14 12:13:14 2023",
+            "Sun Jul  2 20:19:43 2023",
             true
         ],
         "11-correnti.pdf": [
-            "Wed Jun 14 12:13:14 2023",
+            "Sun Jul  2 20:19:46 2023",
             true
         ],
         "12-magnetostatica.pdf": [
-            "Wed Jun 14 12:13:14 2023",
+            "Sun Jul  2 20:19:48 2023",
             true
         ],
         "13-elettromagnetismo.pdf": [
-            "Wed Jun 14 12:13:14 2023",
+            "Sun Jul  2 20:19:51 2023",
+            true
+        ]
+    },
+    "data_test\\rootfolder\\universit\u00e0\\FondamentiDiAutomatica": {
+        "Trasformata_di_Laplace.pdf": [
+            "Sun Jul  2 20:19:54 2023",
+            true
+        ]
+    },
+    "data_test\\rootfolder\\universit\u00e0\\GeometriaECombinatoria": {
+        "10_Basi.pdf": [
+            "Sun Jul  2 20:19:55 2023",
+            true
+        ],
+        "11_Operazioni_tra_sottospazi.pdf": [
+            "Sun Jul  2 20:19:56 2023",
+            true
+        ],
+        "12_Spazi_affini.pdf": [
+            "Sun Jul  2 20:19:56 2023",
+            true
+        ],
+        "13_Omomorfismo.pdf": [
+            "Sun Jul  2 20:19:57 2023",
+            true
+        ],
+        "14_Immagine.pdf": [
+            "Sun Jul  2 20:19:57 2023",
+            true
+        ],
+        "15_Nucleo.pdf": [
+            "Sun Jul  2 20:19:57 2023",
+            true
+        ],
+        "16_Endomorfismi.pdf": [
+            "Sun Jul  2 20:19:58 2023",
+            true
+        ],
+        "17_Autovalori_Autovettori.pdf": [
+            "Sun Jul  2 20:19:58 2023",
+            true
+        ],
+        "18_Diagonalizzazione.pdf": [
+            "Sun Jul  2 20:19:59 2023",
+            true
+        ],
+        "1_Matrici.pdf": [
+            "Sun Jul  2 20:20:00 2023",
+            true
+        ],
+        "2_Determinante.pdf": [
+            "Sun Jul  2 20:20:00 2023",
+            true
+        ],
+        "3_Matrice_inversa.pdf": [
+            "Sun Jul  2 20:20:00 2023",
+            true
+        ],
+        "4_Rango_di_una_matrice.pdf": [
+            "Sun Jul  2 20:20:01 2023",
+            true
+        ],
+        "5_Gauss.pdf": [
+            "Sun Jul  2 20:20:02 2023",
+            true
+        ],
+        "6_Vettori.pdf": [
+            "Sun Jul  2 20:20:03 2023",
+            true
+        ],
+        "7_Combinazione_lineare.pdf": [
+            "Sun Jul  2 20:20:03 2023",
+            true
+        ],
+        "8_Spazi_vettoriali.pdf": [
+            "Sun Jul  2 20:20:03 2023",
+            true
+        ],
+        "9_Generatori.pdf": [
+            "Sun Jul  2 20:20:04 2023",
             true
         ]
     },
     "data_test\\rootfolder\\universit\u00e0\\MachineLearning": {
         "1-Introduzione ML-sbloccato.pdf": [
-            "Wed Jun 14 12:13:14 2023",
+            "Sun Jul  2 20:20:04 2023",
             true
         ],
         "10-Algoritmo K-NN-sbloccato.pdf": [
-            "Wed Jun 14 12:13:14 2023",
+            "Sun Jul  2 20:20:05 2023",
             true
         ],
         "11-ML con Python - Introduzione-sbloccato.pdf": [
-            "Wed Jun 14 12:13:14 2023",
+            "Sun Jul  2 20:20:05 2023",
             true
         ],
         "12-Ex_02 Esercitazione su Regressione-sbloccato.pdf": [
-            "Wed Jun 14 12:13:14 2023",
+            "Sun Jul  2 20:20:05 2023",
             true
         ],
         "13-Ex_03 Esercitazione su Regressione-sbloccato.pdf": [
-            "Wed Jun 14 12:13:14 2023",
+            "Sun Jul  2 20:20:06 2023",
             true
         ],
         "14-Classification - Decision Trees-sbloccato.pdf": [
-            "Wed Jun 14 12:13:14 2023",
+            "Sun Jul  2 20:20:06 2023",
             true
         ],
         "15-Alberi C4.5-sbloccato.pdf": [
-            "Wed Jun 14 12:13:14 2023",
+            "Sun Jul  2 20:20:07 2023",
             true
         ],
         "16-Classification - BoostingAdaBoost-sbloccato.pdf": [
-            "Wed Jun 14 12:13:14 2023",
+            "Sun Jul  2 20:20:07 2023",
             true
         ],
         "17-Classification - Overfitting e Regularization-sbloccato.pdf": [
-            "Wed Jun 14 12:13:14 2023",
+            "Sun Jul  2 20:20:08 2023",
             true
         ],
         "18-Ex_04 Esercitazione Linear models per la classificazione-sbloccato.pdf": [
-            "Wed Jun 14 12:13:14 2023",
+            "Sun Jul  2 20:20:08 2023",
             true
         ],
         "19-Ex_05 Esercitazione su Classificazione Decision Trees-sbloccato.pdf": [
-            "Wed Jun 14 12:13:14 2023",
+            "Sun Jul  2 20:20:08 2023",
             true
         ],
         "2-Richiami di Matematica-sbloccato.pdf": [
-            "Wed Jun 14 12:13:14 2023",
+            "Sun Jul  2 20:20:09 2023",
             true
         ],
         "20-Ex_06 Esercitazione su Ensembles di Decision Trees-sbloccato.pdf": [
-            "Wed Jun 14 12:13:14 2023",
+            "Sun Jul  2 20:20:09 2023",
             true
         ],
         "21-Ex_07 Esercitazione Voting e Stacking ensembles-sbloccato.pdf": [
-            "Wed Jun 14 12:13:14 2023",
+            "Sun Jul  2 20:20:10 2023",
             true
         ],
         "22-Clustering-sbloccato.pdf": [
-            "Wed Jun 14 12:13:14 2023",
+            "Sun Jul  2 20:20:10 2023",
             true
         ],
         "23-Ex_08 Esercitazione Cluster-sbloccato.pdf": [
-            "Wed Jun 14 12:13:14 2023",
+            "Sun Jul  2 20:20:10 2023",
             true
         ],
         "24-Ex_09 Esercitazione Cluster-sbloccato.pdf": [
-            "Wed Jun 14 12:13:14 2023",
+            "Sun Jul  2 20:20:11 2023",
             true
         ],
         "25-Ex_10 Esercitazione Cluster-sbloccato.pdf": [
-            "Wed Jun 14 12:13:14 2023",
+            "Sun Jul  2 20:20:11 2023",
             true
         ],
         "26-Reti-Neurali-sbloccato.pdf": [
-            "Wed Jun 14 12:13:14 2023",
+            "Sun Jul  2 20:20:12 2023",
             true
         ],
         "27-Ex_11 Esercitazione Reti Neurali-sbloccato.pdf": [
-            "Wed Jun 14 12:13:14 2023",
+            "Sun Jul  2 20:20:14 2023",
             true
         ],
         "28-Ex_12 Esercitazione Reti Neurali-sbloccato.pdf": [
-            "Wed Jun 14 12:13:14 2023",
+            "Sun Jul  2 20:20:14 2023",
             true
         ],
         "29-CB(1)-sbloccato.pdf": [
-            "Wed Jun 14 12:13:14 2023",
+            "Sun Jul  2 20:20:15 2023",
             true
         ],
         "3-Regression-Introduzione-sbloccato.pdf": [
-            "Wed Jun 14 12:13:14 2023",
+            "Sun Jul  2 20:20:15 2023",
             true
         ],
         "30-CB(2)-sbloccato.pdf": [
-            "Wed Jun 14 12:13:14 2023",
+            "Sun Jul  2 20:20:16 2023",
             true
         ],
         "31-CB(3)-sbloccato.pdf": [
-            "Wed Jun 14 12:13:14 2023",
+            "Sun Jul  2 20:20:17 2023",
             true
         ],
         "32-CBNN-sbloccato.pdf": [
-            "Wed Jun 14 12:13:38 2023",
+            "Sun Jul  2 20:20:19 2023",
             true
         ],
         "33-Ex_13 Esercitazione su Classificatore Bayesiano-sbloccato.pdf": [
-            "Wed Jun 14 12:13:38 2023",
+            "Sun Jul  2 20:20:21 2023",
             true
         ],
         "34-SVM(1)-sbloccato.pdf": [
-            "Wed Jun 14 12:13:38 2023",
+            "Sun Jul  2 20:20:21 2023",
             true
         ],
         "35-SVM(2)-sbloccato.pdf": [
-            "Wed Jun 14 12:13:38 2023",
+            "Sun Jul  2 20:20:24 2023",
             true
         ],
         "36-SVM(3)-sbloccato.pdf": [
-            "Wed Jun 14 12:13:38 2023",
+            "Sun Jul  2 20:20:26 2023",
             true
         ],
         "37-Ex_14 Esercitazione SVM-sbloccato.pdf": [
-            "Wed Jun 14 12:13:38 2023",
+            "Sun Jul  2 20:20:27 2023",
             true
         ],
         "38-RD-sbloccato.pdf": [
-            "Wed Jun 14 12:13:38 2023",
+            "Sun Jul  2 20:20:27 2023",
             true
         ],
         "39-Ex_15 Riduzione dimensionalita-sbloccato.pdf": [
-            "Wed Jun 14 12:13:38 2023",
+            "Sun Jul  2 20:20:29 2023",
             true
         ],
         "4-Regression-Valutazione-sbloccato.pdf": [
-            "Wed Jun 14 12:13:38 2023",
+            "Sun Jul  2 20:20:29 2023",
             true
         ],
         "40-RL(1)-sbloccato.pdf": [
-            "Wed Jun 14 12:13:38 2023",
+            "Sun Jul  2 20:20:30 2023",
             true
         ],
         "41-RL(2)-sbloccato.pdf": [
-            "Wed Jun 14 12:13:38 2023",
+            "Sun Jul  2 20:20:30 2023",
             true
         ],
         "42-Ex_16 Esercitazione RL 1-sbloccato.pdf": [
-            "Wed Jun 14 12:13:38 2023",
+            "Sun Jul  2 20:20:31 2023",
             true
         ],
         "43-Ex_17 Esercitazione RL 2-sbloccato.pdf": [
-            "Wed Jun 14 12:13:38 2023",
+            "Sun Jul  2 20:20:31 2023",
             true
         ],
         "44-Ex18 Intro DL-sbloccato.pdf": [
-            "Wed Jun 14 12:13:39 2023",
+            "Sun Jul  2 20:20:32 2023",
             true
         ],
         "5-Ridge Regression - Cross Validation-sbloccato.pdf": [
-            "Wed Jun 14 12:13:39 2023",
+            "Sun Jul  2 20:20:33 2023",
             true
         ],
         "6-Regression - FS  Lasso-sbloccato.pdf": [
-            "Wed Jun 14 12:13:39 2023",
+            "Sun Jul  2 20:20:33 2023",
             true
         ],
         "7-Dimostrazioni-Lasso-sbloccato.pdf": [
-            "Wed Jun 14 12:13:39 2023",
+            "Sun Jul  2 20:20:34 2023",
             true
         ],
         "8-Expected Prediction Error-sbloccato.pdf": [
-            "Wed Jun 14 12:13:39 2023",
+            "Sun Jul  2 20:20:35 2023",
             true
         ],
         "9-Classification - IntroduzioneLR-sbloccato.pdf": [
-            "Wed Jun 14 12:13:39 2023",
+            "Sun Jul  2 20:20:35 2023",
+            true
+        ]
+    },
+    "data_test\\rootfolder\\universit\u00e0\\ProgrammazioneOggetti": {
+        "POO-01-introduzione-java-da-C.pdf": [
+            "Sun Jul  2 20:20:35 2023",
+            true
+        ],
+        "POO-02-paradigma-OO.pdf": [
+            "Sun Jul  2 20:20:36 2023",
+            true
+        ],
+        "POO-03-oggetti-riferimenti.pdf": [
+            "Sun Jul  2 20:20:37 2023",
+            true
+        ],
+        "POO-04-gestione-memoria.pdf": [
+            "Sun Jul  2 20:20:38 2023",
+            true
+        ],
+        "POO-05-costruttori-string-array.pdf": [
+            "Sun Jul  2 20:20:39 2023",
+            true
+        ],
+        "POO-06-documentazione-package.pdf": [
+            "Sun Jul  2 20:20:40 2023",
+            true
+        ],
+        "POO-07-coesione-accoppiamento.pdf": [
+            "Sun Jul  2 20:20:40 2023",
+            true
+        ],
+        "POO-08-testing.pdf": [
+            "Sun Jul  2 20:20:40 2023",
+            true
+        ],
+        "POO-09-polimorfismo-interfacce.pdf": [
+            "Sun Jul  2 20:20:41 2023",
+            true
+        ],
+        "POO-10-polimorfismo-esercitazione.pdf": [
+            "Sun Jul  2 20:20:42 2023",
+            true
+        ],
+        "POO-11-polimorfismo-studio-di-caso.pdf": [
+            "Sun Jul  2 20:20:42 2023",
+            true
+        ],
+        "POO-12-polimorfismo-interface-estensione-object.pdf": [
+            "Sun Jul  2 20:20:42 2023",
+            true
+        ],
+        "POO-13-estensione-protected.pdf": [
+            "Sun Jul  2 20:20:43 2023",
+            true
+        ],
+        "POO-14-generics.pdf": [
+            "Sun Jul  2 20:20:46 2023",
+            true
+        ],
+        "POO-15-collezioni-liste-generiche.pdf": [
+            "Sun Jul  2 20:20:47 2023",
+            true
+        ],
+        "POO-20-classi-astratte-enum.pdf": [
+            "Sun Jul  2 20:20:48 2023",
             true
         ]
     },
     "data_test\\rootfolder\\varie": {
         "DiagrammiABlocchi.pptx": [
-            "Wed Jun 14 12:14:16 2023",
+            "Wed Jun 14 12:18:10 2023",
             true
         ],
         "HTML&CSS.pptx": [
-            "Wed Jun 14 12:14:18 2023",
+            "Wed Jun 14 12:18:10 2023",
+            true
+        ]
+    },
+    "data_test\\rootfolder\\varie\\Alimentazione": {
+        "Alimentazione-e-sostenibilit\u00e0-Quale-relazione-e-quali-sfide-per-i-prossimi-anni.pdf": [
+            "Sun Jul  2 20:20:49 2023",
+            true
+        ],
+        "Educazione-Alimentare.pdf": [
+            "Sun Jul  2 20:20:50 2023",
+            true
+        ],
+        "Fond_Scienza_Aliment.pdf": [
+            "Sun Jul  2 20:20:50 2023",
             true
         ]
     },
     "data_test\\rootfolder\\varie\\homework": {
         "id-homework-1.pptx": [
-            "Wed Jun 14 12:13:39 2023",
+            "Wed Jun 14 12:18:10 2023",
             true
         ],
         "id-homework-2.pptx": [
-            "Wed Jun 14 12:13:39 2023",
+            "Wed Jun 14 12:18:10 2023",
             true
         ],
         "id-homework-3.pptx": [
-            "Wed Jun 14 12:13:39 2023",
+            "Wed Jun 14 12:18:10 2023",
             true
         ],
         "id-homework-4.pptx": [
-            "Wed Jun 14 12:13:39 2023",
+            "Wed Jun 14 12:18:10 2023",
             true
         ],
         "id-homework-5.pptx": [
-            "Wed Jun 14 12:13:39 2023",
+            "Wed Jun 14 12:18:10 2023",
             true
         ],
         "id-homework-6.pptx": [
-            "Wed Jun 14 12:13:39 2023",
+            "Wed Jun 14 12:18:10 2023",
             true
         ],
         "id-homework-7.pptx": [
-            "Wed Jun 14 12:13:39 2023",
+            "Wed Jun 14 12:18:10 2023",
             true
         ],
         "id-homework-8-progetto-finale.pptx": [
-            "Wed Jun 14 12:13:39 2023",
+            "Wed Jun 14 12:18:10 2023",
             true
         ]
     },
     "data_test\\rootfolder\\varie\\relazioni": {
         "HW3-AnalisiDelDataset.pptx": [
-            "Wed Jun 14 12:13:39 2023",
+            "Wed Jun 14 12:18:10 2023",
             true
         ],
         "HW3-ValutazioneSperimentale.pptx": [
-            "Wed Jun 14 12:13:39 2023",
+            "Wed Jun 14 12:18:10 2023",
             true
         ],
         "HW5-WebScarping.pptx": [
-            "Wed Jun 14 12:13:39 2023",
+            "Wed Jun 14 12:18:10 2023",
             true
         ],
         "HW8-DataIntegration.pptx": [
-            "Wed Jun 14 12:13:39 2023",
+            "Wed Jun 14 12:18:10 2023",
             true
         ]
     }

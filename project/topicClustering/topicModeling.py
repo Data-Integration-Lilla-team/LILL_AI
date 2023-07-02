@@ -11,20 +11,49 @@ import pyLDAvis
 import os
 import pickle
 from gensim.models import CoherenceModel
+import json
 
 class LDAModel:
+        
+        def read_setting_data(self):
+           
+
+           
+
+            # Open the JSON file and load its contents
+            with open(self.path_settings, 'r') as file:
+                data = json.load(file)
+                clusters=int(data["number_clusers"])
+                return clusters
+             
         def __init__(self):
              
             self.stop_words = stopwords.words('italian')
+            self.path_base_model_path=r"topicClustering\model"
             self.path_data_file=r"dataCleaning\output\index_csv_parsed.csv"
             self.column_data="parsed_text"
             self.lda_model=None
-            self.model_path=r"topicClustering\model.lda"
-            self.id2word_path=r"topicClustering\id2token.mm"
-            self.corpus_path=r"topicClustering\corpus.mm"
+            
+          
             #iperparametri
-            self.number_topics=50
-            self.top_k_topics=5
+            self.path_settings="topicClustering\model_settings\model_config.json"
+            self.number_topics=self.read_setting_data()
+            self.top_k_topics=4
+            self.path_base_model_path=self.path_base_model_path+"_"+str(self.number_topics)
+            # Check if the folder already exists
+            if not os.path.exists(self.path_base_model_path):
+                
+                os.mkdir(self.path_base_model_path)
+                
+            
+            self.model_path=os.path.join(self.path_base_model_path,"model.lda")
+            self.id2word_path=os.path.join(self.path_base_model_path,"id2token.mm")
+            self.corpus_path=os.path.join(self.path_base_model_path,"corpus.mm")
+            self.out_path_dir=os.path.join(self.path_base_model_path,"output")
+            if not os.path.exists(self.out_path_dir):
+                os.mkdir(self.out_path_dir)
+                
+            self.output_path=os.path.join(self.out_path_dir,"index_with_topics.csv")
         
         def sent_to_words(self,sentences):
             for sentence in sentences:
@@ -170,7 +199,7 @@ class LDAModel:
             data["topics"]=predicted_topics_col
             data["topics2perc"]=predicted_topics_perc
 
-            data.to_csv(r"topicClustering\output\index_with_topics.csv",index=False)
+            data.to_csv(self.output_path,index=False)
      
 if __name__=="__main__":
     model=LDAModel()
