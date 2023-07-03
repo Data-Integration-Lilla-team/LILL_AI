@@ -1,0 +1,6 @@
+===EVAL FILE===
+
+{"number_clusers": 20, "mix_topic_for_cluser": 5, "passes": 20, "decay": 0.5, "iterations": 20, "min_prob": 0.3, "per_word_topic": true, "random_state": true, "alpha": "auto", "eta": "auto"}
+coherence score: nan
+ Perplexity score: -14.496797285708313
+================================

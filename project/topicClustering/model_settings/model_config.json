@@ -1,4 +1,15 @@
 {
-    "number_clusers":50,
-    "mix_topic_for_cluser":5
+    "number_clusers":30,
+    "mix_topic_for_cluser":5,
+    "passes": 10,
+    "decay":0.5,
+    "iterations":100,
+
+    "min_prob":0.3,
+    "per_word_topic": true,
+    "random_state":true,
+    "alpha":"auto",
+    "eta":"auto"
+    
+
 }

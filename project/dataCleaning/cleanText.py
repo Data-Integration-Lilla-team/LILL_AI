@@ -28,6 +28,7 @@ class DataCleaner:
         self.puntuations=self.read_symbols(self.symbols_path)
         self.puntuations.update(["•","–"])       #da aggiungere altri custom punctuation
         self.max_length=16
+        self.min_length=1
 
 
     def read_symbols(self,path):
@@ -78,7 +79,7 @@ class DataCleaner:
         final=[]
         for word in words:
             if word not in stops:
-                if len(word)<self.max_length:
+                if len(word)<self.max_length and len(word)>self.min_length:
                     final.append(word)
         final=" ".join(final)
 
@@ -148,7 +149,7 @@ class DataCleaner:
                 parsed_text=self.remove_stops(parsed_text,stops)                  #rimozione stopwords
                 parsed_text=self.remove_doubleCharWords(parsed_text)    #rimozione parole e simboli superflui
                 parsed_text=self.delete_double_spaces(parsed_text)
-                #parsed_text=self.lemming_text(parsed_text)              #lemming delle parole
+                parsed_text=self.lemming_text(parsed_text)              #lemming delle parole
                 
             else:
                 parsed_text=""

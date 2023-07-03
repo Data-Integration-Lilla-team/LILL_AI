@@ -13,6 +13,7 @@ import pickle
 from gensim.models import CoherenceModel
 import json
 
+
 class LDAModel:
         
         def read_setting_data(self):
@@ -23,22 +24,32 @@ class LDAModel:
             # Open the JSON file and load its contents
             with open(self.path_settings, 'r') as file:
                 data = json.load(file)
-                clusters=int(data["number_clusers"])
-                return clusters
+                
+                return data
              
         def __init__(self):
-             
+            
+            #path base
             self.stop_words = stopwords.words('italian')
             self.path_base_model_path=r"topicClustering\model"
             self.path_data_file=r"dataCleaning\output\index_csv_parsed.csv"
             self.column_data="parsed_text"
+            
+
+            #variabili
             self.lda_model=None
+            self.corpus=None
+            self.id2word=None
+            
             
           
             #iperparametri
             self.path_settings="topicClustering\model_settings\model_config.json"
-            self.number_topics=self.read_setting_data()
-            self.top_k_topics=4
+            self.settings=self.read_setting_data()
+            self.number_topics=self.settings["number_clusers"]
+            self.top_k_topics=self.settings["mix_topic_for_cluser"]
+
+            #creazioen cartelle dei modelli (dinamiche per numero di clusters)
             self.path_base_model_path=self.path_base_model_path+"_"+str(self.number_topics)
             # Check if the folder already exists
             if not os.path.exists(self.path_base_model_path):
@@ -52,13 +63,23 @@ class LDAModel:
             self.out_path_dir=os.path.join(self.path_base_model_path,"output")
             if not os.path.exists(self.out_path_dir):
                 os.mkdir(self.out_path_dir)
-                
+
             self.output_path=os.path.join(self.out_path_dir,"index_with_topics.csv")
-        
+            
+            #evaluation del modello
+            self.evaluation_path=os.path.join(self.path_base_model_path,"evaluation")
+            self.evaluation_file=os.path.join(self.evaluation_path,"evaluation.txt")
+            if not os.path.exists(self.evaluation_path):
+                os.mkdir(self.evaluation_path)
+                with open(self.evaluation_file,"w") as f:
+                    f.write("===EVAL FILE===\n\n")
+
         def sent_to_words(self,sentences):
             for sentence in sentences:
                 # deacc=True removes punctuations
                 yield(gensim.utils.simple_preprocess(str(sentence), deacc=True))
+
+                
         def remove_stopwords(self,texts):
             return [[word for word in simple_preprocess(str(doc)) 
                     if word not in self.stop_words] for doc in texts]
@@ -100,6 +121,7 @@ class LDAModel:
             #memorizzo
             id2word.save(self.id2word_path)
 
+
             
             # Create Corpus
             texts = data_words
@@ -107,6 +129,8 @@ class LDAModel:
             corpus = [id2word.doc2bow(text) for text in texts]
             corpora.MmCorpus.serialize(self.corpus_path, corpus)
             # View
+            self.corpus=corpus
+            self.id2word=id2word
             return (corpus,id2word)
 
         
@@ -119,26 +143,49 @@ class LDAModel:
             id2word=corpus_id2word[1]
             # number of topics
             num_topics =self.number_topics
+
             # Build LDA model
-            self.lda_model = gensim.models.LdaMulticore(corpus=corpus,
+            self.lda_model = gensim.models.LdaModel(corpus=corpus,
                                                 id2word=id2word,
-                                                num_topics=num_topics)
+                                                num_topics=num_topics,
+                                                passes=self.settings["passes"],
+                                                iterations=self.settings["iterations"],
+                                                minimum_probability=self.settings["min_prob"],
+                                                decay=self.settings["decay"],
+                                                alpha=self.settings["alpha"],
+                                                eta=self.settings["eta"])
             # Print the Keyword in the 10 topics
             pprint(self.lda_model.print_topics())
             
 
             self.lda_model.save(self.model_path)
             
+        def print_evaluation(self,coh_score,perplex_score):
+
+            with open(self.evaluation_file,"a") as file:
+                setting_string=json.dumps(self.settings)
+                line=setting_string+"\n"+"coherence score: "+str(coh_score)+ "\n Perplexity score: "+str(perplex_score)+"\n================================\n"
+                file.write(line)
             
+
+        def evaluate(self):
+            coherence_model = CoherenceModel(
+            model=self.lda_model,
+            texts=self.corpus,
+            dictionary=self.id2word,
+            coherence='c_v'  
+        )
+            coherence_score = coherence_model.get_coherence()
+
+            perplexity_score = self.lda_model.log_perplexity(self.corpus)
+
+
+            self.print_evaluation(coherence_score,perplexity_score)
+            # Print the evaluation scores
+            print(f"Coherence Score: {coherence_score}")
+            print(f"Perplexity Score: {perplexity_score}")
+
                 
-            
-        
-
-        def train_model(self,vis=False):
-            corpus=self.prepare_data()
-            self.create_model(corpus,vis)
-
-        
         def predict_topics(self,data):
             lda_model = gensim.models.LdaModel.load(self.model_path)
             dictionary = corpora.Dictionary.load(self.id2word_path)
@@ -170,23 +217,17 @@ class LDAModel:
                 topics_percetage_column.append(current_perc4topics[:self.top_k_topics])
 
             
-            return [topics_column,topics_percetage_column]
+            return [topics_column,topics_percetage_column]     
+        
+
+        def train_model(self,vis=False):
+            corpus=self.prepare_data()
+            self.create_model(corpus,vis)
+
+        
+
                         
 
-        def test(self):
-            lda_model = gensim.models.LdaModel.load(self.model_path)
-            dictionary = corpora.Dictionary.load(self.id2word_path)
-                # Preprocess the new text
-            new_text = "linear regression, machine learning"
-            new_text = new_text.lower().split()
-            new_text_bow = dictionary.doc2bow(new_text)
-    
-            # Get the topics related to the new text
-            topics = lda_model.get_document_topics(new_text_bow)
-
-            # Print the topics
-            for topic in topics:
-                print("Topic {}: {:.2%}".format(topic[0], topic[1]))
 
         def cluster_text(self):
             data=pd.read_csv(self.path_data_file).fillna("")
@@ -207,11 +248,14 @@ if __name__=="__main__":
      
      #individuo i topics per ogni frase
     model.cluster_text()
+
+    #evaluation del modello
+    model.evaluate()
      
      
      
 
-    model.test()
+
 
 
 
