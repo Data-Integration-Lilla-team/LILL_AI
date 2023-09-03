@@ -5,7 +5,7 @@
     "decay":0.5,
     "iterations":100,
 
-    "min_prob":0.3,
+    "min_prob":0.12,
     "per_word_topic": true,
     "random_state":true,
     "alpha":"auto",

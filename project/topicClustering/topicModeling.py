@@ -64,7 +64,7 @@ class LDAModel:
             if not os.path.exists(self.out_path_dir):
                 os.mkdir(self.out_path_dir)
 
-            self.output_path=os.path.join(self.out_path_dir,"index_with_topics.csv")
+            self.output_path=os.path.join(self.out_path_dir,"index_with_topics2.csv")
             
             #evaluation del modello
             self.evaluation_path=os.path.join(self.path_base_model_path,"evaluation")
